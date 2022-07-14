@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { appRoutes } from './routes';
+import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 
 import { ToastrService } from './common/toastr.service';
 import { EventService } from './events/shared/event.service';
 
 import { CreateEventComponent } from './events/create-event.component';
+import { Error404Component } from './errors/404.component';
 import { EventsAppComponent } from './events-app.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventsListComponent } from './events/events-list.component';
@@ -23,13 +25,14 @@ import { NavBarComponent } from './nav/navbar.component';
   ],
   declarations: [
     CreateEventComponent,
+    Error404Component,
     EventsAppComponent,
     EventDetailsComponent,
     EventsListComponent,
     EventThumbnailComponent,
     NavBarComponent
   ],
-  providers: [EventService, ToastrService],
+  providers: [EventService, ToastrService, EventRouteActivator],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
