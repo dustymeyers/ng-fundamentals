@@ -8,6 +8,7 @@ import { appRoutes } from './routes';
 import { ToastrService } from './common/toastr.service';
 import { EventService } from './events/shared/event.service';
 
+import { CreateEventComponent } from './events/create-event.component';
 import { EventsAppComponent } from './events-app.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventsListComponent } from './events/events-list.component';
@@ -21,6 +22,7 @@ import { NavBarComponent } from './nav/navbar.component';
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
+    CreateEventComponent,
     EventsAppComponent,
     EventDetailsComponent,
     EventsListComponent,

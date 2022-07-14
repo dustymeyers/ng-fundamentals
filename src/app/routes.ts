@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 
+import { CreateEventComponent } from './events/create-event.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventsListComponent } from './events/events-list.component';
 
 export const appRoutes: Routes = [
+  { path: 'events/new', component: CreateEventComponent},
   { path: 'events', component: EventsListComponent },
   // /events/1 ... /events/foo
   { path: 'events/:id', component: EventDetailsComponent},
