@@ -8,7 +8,7 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { EventsListComponent } from './events/events-list.component';
 
 export const appRoutes: Routes = [
-  { path: 'events/new', component: CreateEventComponent},
+  { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
   { path: 'events', component: EventsListComponent },
   // /events/1 ... /events/foo
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator]},
