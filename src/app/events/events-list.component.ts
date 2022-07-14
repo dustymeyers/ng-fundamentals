@@ -6,7 +6,8 @@ import { ToastrService } from '../common/toastr.service';
 // declare let toastr: { success: (arg0: any) => void; }
 
 @Component({
-    selector: 'events-list',
+    // no longer needed now that we are routing to it
+    // selector: 'events-list',
     template: `
     <div>
       <h1>Upcoming Angular Events</h1>
