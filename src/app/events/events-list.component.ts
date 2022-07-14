@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { EventService } from './shared/event.service';
 import { Component, OnInit } from "@angular/core";
 import { ToastrService } from '../common/toastr.service';
@@ -22,16 +23,17 @@ import { ToastrService } from '../common/toastr.service';
 })
 export class EventsListComponent implements OnInit {
 
-  public events: any[] = [];
+  public events: any
 
-  constructor(private eventService: EventService, private toastr: ToastrService) {
+  constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
     // try to avoid initializing things inside of the constructor, instead use ngOnInit()
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.events = this.eventService.getEvents();
+    // this.eventService.getEvents().subscribe(events => this.events = events);
+    this.events = this.route.snapshot.data['events'];
   }
 
   handleThumbnailClick(eventName: any) {

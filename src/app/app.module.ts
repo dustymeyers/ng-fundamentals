@@ -1,3 +1,4 @@
+import { EventListResolver } from './events/events-list-resolver.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -36,6 +37,7 @@ import { NavBarComponent } from './nav/navbar.component';
     EventService,
     ToastrService,
     EventRouteActivator,
+    EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
