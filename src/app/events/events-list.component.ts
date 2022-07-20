@@ -1,3 +1,4 @@
+import { IEvent } from './shared/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from './shared/event.service';
 import { Component, OnInit } from "@angular/core";
@@ -23,7 +24,7 @@ import { ToastrService } from '../common/toastr.service';
 })
 export class EventsListComponent implements OnInit {
 
-  public events: any
+  public events!: IEvent[];
 
   constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
     // try to avoid initializing things inside of the constructor, instead use ngOnInit()
