@@ -1,3 +1,4 @@
+import { AuthService } from './user/auth.service';
 import { EventListResolver } from './events/events-list-resolver.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
@@ -39,6 +40,7 @@ import { NavBarComponent } from './nav/nav-bar.component';
     NavBarComponent
   ],
   providers: [
+    AuthService,
     EventService,
     ToastrService,
     EventRouteActivator,
